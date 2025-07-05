@@ -4,6 +4,7 @@ import java.util.function.Function;
 import org.black_ixx.playerpoints.PlayerPoints;
 import org.black_ixx.playerpoints.conversion.converter.EcoBitsConverter;
 import org.black_ixx.playerpoints.conversion.converter.GamePointsConverter;
+import org.black_ixx.playerpoints.conversion.converter.SuperCreditsConverter;
 import org.black_ixx.playerpoints.conversion.converter.TokenManagerConverter;
 import org.bukkit.Bukkit;
 
@@ -11,6 +12,7 @@ public enum CurrencyPlugin {
 
     TOKENMANAGER("TokenManager", TokenManagerConverter::new, false),
     GAMEPOINTS("GamePoints", GamePointsConverter::new, false),
+    SUPERCREDITS("SuperCredits", SuperCreditsConverter::new, false),
     ECOBITS("EcoBits", EcoBitsConverter::new, true);
 
     private final String plugin;
