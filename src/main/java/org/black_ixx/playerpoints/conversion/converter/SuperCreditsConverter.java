@@ -28,7 +28,6 @@ public class SuperCreditsConverter extends CurrencyConverter {
     @Override
     @SuppressWarnings("unchecked")
     public void convert(String currencyId) {
-        if (!Objects.equals(currencyId, "KCT")) return;
 
         Map<UUID, Integer> points = new HashMap<>();
         Map<UUID, String> usernames = new HashMap<>();

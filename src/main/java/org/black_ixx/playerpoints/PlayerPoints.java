@@ -11,6 +11,7 @@ import me.lokka30.treasury.api.economy.EconomyProvider;
 import net.milkbowl.vault.economy.Economy;
 import org.black_ixx.playerpoints.config.SettingKey;
 import org.black_ixx.playerpoints.hook.PointsPlaceholderExpansion;
+import org.black_ixx.playerpoints.hook.ScPointsPlaceholderExpansion;
 import org.black_ixx.playerpoints.listeners.PointsMessageListener;
 import org.black_ixx.playerpoints.listeners.VotifierListener;
 import org.black_ixx.playerpoints.manager.CommandManager;
@@ -94,9 +95,10 @@ public class PlayerPoints extends RosePlugin {
 
         this.getScheduler().runTask(() -> {
             // Register placeholders, if applicable
-            if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI"))
+            if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
                 new PointsPlaceholderExpansion(this).register();
-
+                new ScPointsPlaceholderExpansion(this).register();
+            }
             // Register votifier listener, if applicable
             if (SettingKey.VOTE_ENABLED.get()) {
                 Plugin votifier = Bukkit.getPluginManager().getPlugin("Votifier");
